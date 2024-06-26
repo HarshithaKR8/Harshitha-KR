@@ -1,0 +1,57 @@
+class Student:
+
+    def _init_(self, student_id, name, age):
+
+        self.student_id = student_id
+
+        self.name = name
+
+        self.age = age
+
+
+
+    def _repr_(self):
+
+        return f"Student(ID: {self.student_id}, Name: {self.name}, Age: {self.age})"
+
+
+
+def create_students():
+
+    students_dict = {}
+
+    
+
+    num_students = int(input("Enter the number of students to create: "))
+
+    
+
+    for i in range(num_students):
+
+        print(f"\nEntering details for student {i+1}:")
+
+        student_id = input("Enter ID: ")
+
+        name = input("Enter name: ")
+
+        age = int(input("Enter age: "))
+
+        
+
+        students_dict[student_id] = Student(student_id, name, age)
+
+    
+
+    return students_dict
+
+
+
+# Example usage
+
+students = create_students()
+
+print("\nStudents created:")
+
+for student_id, student in students.items():
+
+    print(student)
